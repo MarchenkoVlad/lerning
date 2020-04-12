@@ -14,38 +14,57 @@
             "голубика",
         ];
 
-        let word = words[Math.floor(Math.random() * words.length)];
-
-        let answerArray = [];
-        for(i = 0; i < word.length; i++) {
-            answerArray[i] = "_";
-        }
-
-        let remainLetters = word.length;
-
+        let word = pickWord(words); //определяем загаданное слово
+        let answerArray = setupAnswerArray(word); //итоговый массив для представления скрытого слова
+        let remainLetters = word.length; // сколько букв осталось угадать
         while (remainLetters > 0) {
-            alert(answerArray.join(" ")); //вывод состояния игры
-            let guess = prompt("Угадайте букву, или нажмите Отмена для выхода  из игры");
+            showPlayerProgress(answerArray); //вывод состояния игры
+            let guess = getGuess(); // ответ игрока
             if (guess === null) {
                 break;
             } else if (guess.length !==1) {
                 alert("Пожалуйста, введите одиночную букву");
             } else {
-                guess = guess.toLocaleLowerCase();
-                for(let j = 0; j < word.length; j++) {
-                    if(word[j] === guess) {
-                        if(answerArray[j] === "_") remainLetters--;
-
-                        answerArray[j] = guess;
-                        alert(remainLetters);
-                    }
-                }
+                let correctGuesses = updateGameState( guess, word, answerArray);
+                //remainLetters -= correctGuesses;
             }
         }
-        
-        alert(answerArray.join(" "));
-        alert("Отлично! Было загадано слово " + word);
+        showAnswerAndCongratulatePlayer(answerArray);
 
+        function pickWord(words) {
+            return words[Math.floor(Math.random() * words.length)];
+        }
+
+        function setupAnswerArray(word) {
+            let arr = [];
+            for(let i = 0; i < word.length; i++){
+                arr[i] = "_"
+            }
+            return arr;
+        }
+        function showPlayerProgress (answerArray){
+            alert(answerArray.join(" "));
+        }
+
+        function getGuess() {
+           return prompt("Угадайте букву, или нажмите Отмена для выхода  из игры");
+        }
+
+        function updateGameState(guess, word, answerArray) {
+            guess = guess.toLocaleLowerCase();
+                for(let j = 0; j < word.length; j++) {
+                    if(word[j] === guess) {
+                        //if(answerArray[j] === "_")
+                         remainLetters--;
+                        answerArray[j] = guess;
+                    }
+                }
+        }
+
+        function showAnswerAndCongratulatePlayer(answerArray){
+            alert(answerArray.join(" "));
+        alert("Отлично! Было загадано слово " + word);
+        }
     </script>
   
 
