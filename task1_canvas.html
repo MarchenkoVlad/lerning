@@ -5,21 +5,54 @@
     <title>Рисуем человечка в canvas</title>
 </head>
 <body>
-    <canvas id="canvas" width="200", height="200" style="border: 1px solid"></canvas>
+    <canvas id="canvas" width="500", height="500" style="border: 1px solid"></canvas>
 
     <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
-    
+
     <script>
         let canvas = document.getElementById("canvas");
         let ctx = canvas.getContext("2d");
-        ctx.fillRect(80, 0, 50, 50);
+       ctx.strokeStyle ="Red";
+        ctx.lineWidth = 5;
+        ctx.strokeRect(80, 0, 50, 50);
+        ctx.fillStyle ="Red";
         ctx.fillRect(100, 50, 10, 20);
+        ctx.fillStyle ="Black";
         for(let i =4; i <17; i++){
             ctx.fillRect(i*10, 70, 10, 10);
         };
         ctx.fillRect(70, 80, 70, 70);
         ctx.fillRect(70, 150, 10, 50);
-        ctx.fillRect(130, 150, 10, 50);
+        ctx.fillRect(130, 150, 10, 50); 
+
+        /*woman*/
+        ctx.strokeStyle = "Turquoise";
+        ctx.lineWidth =4;
+        ctx.strokeRect(240, 20, 40, 40); //голова
+        ctx.beginPath();
+        /*туловище*/
+        ctx.moveTo(260,60);  
+        ctx.lineTo(260, 110); 
+        /*левая рука*/
+        ctx.moveTo(260, 90);
+        ctx.lineTo(220, 70);
+        /*правая рука*/
+        ctx.moveTo(260, 90);
+        ctx.lineTo(300, 70);
+        /*юбка*/
+        ctx.moveTo(260, 110);
+        ctx.lineTo(300, 140);
+        ctx.moveTo(260, 110);
+        ctx.lineTo(220, 140);
+        ctx.moveTo(220, 140);
+        ctx.lineTo(300, 140);
+        /*правая нога*/
+        ctx.moveTo(270, 140);
+        ctx.lineTo(265, 210);
+        /*левая нога*/
+        ctx.moveTo(250, 140);
+        ctx.lineTo(255, 210);
+        ctx.stroke();
     </script>
 </body>
 </html> 
