@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задачи по взаимодействию с DOM</title>
+</head>
+<body>
+    <!--task10 вывести класс абзаца-->
+    <p class="my-class">Абзац с классом</p>
+    <input type="button" onclick="getAttr()" value="Нажать для вывода класса абзаца">
+    <br><br>
+
+    <!--task11-->
+    <style>
+        .test-class {
+            color: red;
+        }
+    </style>
+    <p class="test-class">Абзац с классом, который задает красный цвет.</p>
+    <input type="button" onclick="getClass()" value="Нажми для вывовода класса абзаца">
+    <input type="button" onclick="delClass()" value="Нажми для удаления атрибута class">
+    <script> 
+    //task10
+    function getAttr(){
+        let elem = document.querySelectorAll('p')[0];
+        let attr = elem.getAttribute("class");
+        alert(attr);
+    }
+
+    //task11
+    function getClass(){
+        let elem = document.querySelectorAll('p')[1];
+        let attribute = elem.getAttribute("class");
+        alert(attribute);
+    }
+
+    function delClass(){
+        let elem = document.querySelectorAll('p')[1];
+        elem.removeAttribute("class");
+        alert("Мы удалили атрибут \"class\". Для проверки кликни кнопку проверки класса.")
+    }
+    </script>
+    
+</body>
+</html>
