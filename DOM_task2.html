@@ -7,12 +7,12 @@
 </head>
 <body>
     <button onclick="changeText()">Нажми на меня!</button>
-    <span>Это текст который надо изменить</span>
+    <span >Это текст который надо изменить</span>
     
     <script>
         function changeText(){
             let span = document.querySelector('span');
-            span.innerHtml = "Новый текст!"
+            span.innerHTML= "Новый текст!"
         }
        
 
