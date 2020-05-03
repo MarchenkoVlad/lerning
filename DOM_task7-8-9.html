@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задачи по взаимодействию с DOM</title>
+</head>
+<body>
+    <!--task7-->
+    <p>При нажатии на кнопку текст в абзаце поменяется</p>
+    <p>При нажатии на кнопку текст в абзаце поменяется</p>
+    <p>При нажатии на кнопку текст в абзаце поменяется</p>
+    <p>При нажатии на кнопку текст в абзаце поменяется</p>
+    <h2>А в заголовке h2 не поменяется</h2>
+    <input type="button" onclick="changeText()" value="Кнопка">
+    <br><br>
+
+    <!--task8-->
+    <h2 class="www">Заголовок с классом www</h2>
+    <p class="www">Абзац с классом www</p>
+    <p>Просто абзац, который не должен меняться</p>
+    <br><input type="button" onclick="changeText2()" value="Изменить текст"><br>
+
+    <!--task9 будем изменять текст тегов из 8ой задачи-->
+    <input type="button" onclick="changeText3()" value="Снова меняем текст">
+
+    <script>
+        //task7
+        function changeText() {
+            let elems = document.getElementsByTagName('p');
+            for(let i = 0; i <elems.length; i++){
+                elems[i].innerHTML = 'Новый текст!';
+            }
+        }
+
+        //task8
+
+        function changeText2() {
+            let elems = document.getElementsByClassName("www");
+            for(let elem of elems){
+                elem.innerHTML = "Новый текст, ура!";
+            }
+        }
+
+        //task9
+        
+        function changeText3() {
+            let elems = document.querySelectorAll('.www');
+            for(let elem of elems){
+                elem.innerHTML = "Снова новый текст!"
+            }
+        }
+    </script>
+    
+</body>
+</html>
