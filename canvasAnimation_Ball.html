@@ -19,10 +19,16 @@
         let Ball = function() {
             this.x = width / 2;
             this.y = height / 2;
-            this.xSpeed = Math.floor(Math.random() * 10 - 5);
-            this.ySpeed = Math.floor(Math.random() * 10 - 5);
+            this.xSpeed = Math.floor(Math.sin(1) * 10 - 5);
+            this.ySpeed = Math.floor(Math.sin(1) * 10 - 5);
             this.color = randomColor(colors);
         };
+
+        function speed(){
+            for (let i = 0; i < 100; i++){
+                
+            }
+        }
 
 
         let circle = function (x, y, radius, fillCircle) {

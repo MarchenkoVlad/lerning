@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задачи на работу с DOM</title>
+</head>
+<body>
+    
+    <input type="text" id="inp"   value="Ку-ку">
+    <input type="button" onclick="hide()" value="Нажми меня!">
+    <input type="button" onclick= "show()" value="Потом меня!">
+   
+    <script>
+        function hide() {
+           let input = document.getElementById('inp');
+           input.style.display = "none";
+        }
+        
+        function show() {
+            let input = document.getElementById('inp');
+            input.style.display = "inline";
+        }
+
+    </script>
+    
+</body>
+</html>
