@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задачи по взаимодействию с DOM</title>
+</head>
+<body>
+    <!-- task 5 -->
+    <span style="border: 1px solid black;">При нажатии на кнопку тег абзац меняется на тег заголовок</span>
+    <p id="p1">При нажатии на кнопку абзац станет заголовком h3</p>
+    <input type="button" onclick="changeTag()" value="Кнопка">
+    <br><br>
+
+    <!-- task6 -->
+    <span style="border: 1px solid black;">Написать калькулятор суммы 2х чисел</span><br><br>
+    <input type="text" id="term" placeholder="Введите первое значение" value=""> + <input type="text" id="term" placeholder="Введите второе значение" value=""> = <span id="result"> ? </span> <br>
+    <input type="button" onclick="sum()" value="Нажмите для сложения">
+    
+    
+
+    <script>
+        //task5
+
+        function changeTag() {
+            let elem = document.getElementById('p1');
+            elem.outerHTML = '<h3>' + elem.innerHTML + '</h3>';
+        }
+
+        //task6
+
+       function sum() {
+            let valueFirst = document.getElementById('term1');
+            let numb1 = Number(valueFirst.value);
+            let valueSecond = document.getElementById('term2');
+            let numb2 = Number(valueSecond.value);
+            let elem = document.getElementById('result');
+            elem.innerHTML = numb1+numb2;
+        }; 
+        /*function sum() {
+            let terms = document.querySelectorAll('span.term');
+            let sum = 0;
+            for(let i = 0; i <terms.length; i++){
+                sum += +terms[i].value;
+                alert(terms[i].value);
+            }
+            let result = document.getElementById('result');
+                result.innerHTML = sum;
+        } */
+    </script>
+</body>
+</html>
