@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Продвинутые задачи по взаимодействию с DOM</title>
+</head>
+<body>
+    <span>  Дан элемент #elem. Сделайте его красного цвета, размером 30px, добавьте ему границу. Решите задачу с помощью свойства cssText.</span>
+    </ul>
+
+    <p id="elem">Подопытный кролик для экспериментов</p> 
+    
+    <script>
+        let elem = document.querySelector("#elem");
+        elem.style.cssText = "color:red; font-size: 30px; border: 1px solid black;";
+    </script>
+    
+</body>
+</html>
