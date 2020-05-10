@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Работа с DOM</title>
+</head>
+<body>
+    <span>при нажатии на кнопку текст в каждом абзаце поменяется на порядковый номер абзаца</span>
+    <p>Абзац</p> 
+    <p>Абзац</p>
+    <p>Абзац</p>
+    <p>Абзац</p>
+    <p>Абзац</p>
+    <p>Абзац</p>
+    <input type="button" id="btn" value="Кнопка">
+
+    <script>
+        let button = document.querySelector("#btn");
+        button.onclick = () => {
+            let elems = document.querySelectorAll('p');
+            for(let i = 0; i < elems.length; i++){
+                elems[i].innerHTML = i+1;
+            }
+        }
+
+    </script>
+</body>
+</html>
