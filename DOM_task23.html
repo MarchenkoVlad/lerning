@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задачи по работе с DOM</title>
+</head>
+<body>
+    <style>
+    </style>
+   
+    <a href="#">google.com</a>
+    <a href="#">google.com</a>
+    <a href="#">google.com</a>
+    <br>
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <p id="test"></p>
+
+    <script>
+    let elems = document.querySelectorAll('a');
+    for (let i = 0; i < elems.length; i++) {
+	elems[i].addEventListener('mouseover', func);
+    }
+
+    function func() {
+        this.innerHTML = this.innerHTML +  "(" + this.getAttribute('href') + ")";
+        this.removeEventListener('mouseover', func);
+    }
+
+    let inputs = document.querySelectorAll('input');
+    for(let i = 0; i < inputs.length; i++) {
+        inputs[i].addEventListener('blur', addValueInPar)
+    }
+
+    function addValueInPar(){
+        document.querySelector('#test').innerHTML += this.value + '<br>';
+        this.removeEventListener('blur', addValueInPar);
+    }
+
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Работа с DOM</title>
+</head>
+<body>
+    <span style="border: 1px solid black">Выведите на экран текущий месяц словом, по-русски.</span><br>
+    <input type="button" id="btn" value="Нажать для вывода текущего месяца">
+   
+    <script>
+        let button = document.querySelector("#btn");
+        button.onclick = () => {
+            let date = new Date();
+            let month = date.getMonth();
+            let months = ["январь", "февраль", "март", "апрель", "май", "июнь", "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь"];
+            alert(months[month]);
+        }     
+
+    </script>
+</body>
+</html>

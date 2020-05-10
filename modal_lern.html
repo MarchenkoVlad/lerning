@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Браузерные события</title>
+</head>
+<body>
+    <input type="button" onclick="countRabbits()" value="Считать кроликов">
+    <input id="elem" type="button" value="Нажми меня!">
+    <input id="elem1" type="button" value="Жмякни сюда!">
+    <button id="elem2">Жмякай кнопку!"</button> 
+    <script>
+       
+        /* 1ая кнопка*/
+        function countRabbits() {
+            for(let i = 1; i <=3; i++) {
+                alert("Кролик номер " + i);
+            };
+            let body = document.querySelector('body');
+            body.style.background = "green";
+        };
+        
+        /* 2ая кнопка*/ 
+        elem.onclick = function(event) {
+            alert(event.type + event.currentTarget);
+            alert("Координаты: " + event.clientX + ":" + event.clientY);
+        };
+        
+        //let but2 = document.getElementById('elem');
+        elem.style.background = 'red';
+
+
+        /* 3ья кнопка*/
+        
+        function handler1() {
+            alert("Спасибо!");
+        };
+        
+        function handler2() {
+            alert("Спасибо еще раз!");
+        };
+
+        elem1.onclick = () => alert("Привет");
+        elem1.addEventListener("click", handler1);
+        elem1.addEventListener("click", handler2);
+
+        /* 4ая кнопка*/
+
+        class Menu {
+            handleEvent(event) {
+                switch(event.type) {
+                    case 'mousedown' :
+                        elem2.innerHTML = "Нажата кнопка мыши";
+                        break;
+                    case 'mouseup':
+                        elem2.innerHTML +="... и отжата.";
+                        break;
+                }
+            }
+        }
+
+        let menu = new Menu();
+        elem2.addEventListener('mousedown', menu);
+        elem2.addEventListener('mouseup', menu);
+
+
+    </script>
+</body>
+</html>

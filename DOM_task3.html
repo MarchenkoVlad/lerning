@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задачи по взаиомдействию с  DOM</title>
+</head>
+<body>
+    <!-- task3-->
+
+    <span style="border: 1px solid black">Дан HTML код. Поменяйте содержимое абзацев с классом <b>zzz</b> на их порядковый номер в коде.</span>
+    <p class="zzz">Абзац</p>
+    <p class="zzz">Абзац</p>
+    <p>Абзац</p>
+    <input type="button" onclick="changeP()" value="Кнопка">
+    <br><br>
+
+    <!-- task 4-->
+    <span style="border: 1px solid black">При нажатии на кнопку текст должен поменяться. Часть нового текста должна быть жирной.</span> 
+    <p id="task4">При нажатии на кнопку текст в абзаце поменяется</p>
+    <input type="button" onclick="changeTxt()" value = "Кнопка">
+
+    <script>
+        //task3
+
+        function changeP() {
+            let elem = document.querySelectorAll('p.zzz');
+            for(let i = 0; i < elem.length; i++){
+                elem[i].innerHTML = i + 1;
+            }
+        }
+
+        //task4
+
+        function changeTxt() {
+            let elem = document.getElementById('task4');
+            elem.outerHTML = '<p>' + "Новый текст с " + '<b>'+"жирным текстом"+'</b>'+'</p>';
+        }
+
+
+
+    </script>
+</body>
+</html>

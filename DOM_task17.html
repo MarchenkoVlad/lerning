@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Работа с DOM</title>
+</head>
+<body>
+    <span style="border: 1px solid black">Выведите на экран текущие день, месяц и год в формате 'год-месяц-день'</span><br>
+    <button id="btn">Нажать для вывода даты</button>
+
+    <script>
+        let button = document.querySelector('#btn');
+        button.onclick = () => {
+            let date = new Date();
+            alert(date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate());
+        }
+
+    </script>
+</body>
+</html>

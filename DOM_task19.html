@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Работа с DOM</title>
+</head>
+<body>
+    <span style="border: 1px solid black">Вывести на экран текущий день/месяц/год/ время</span><br>
+    <input type="button" onclick="displayDay()" value="Нажать для вывода текущего дня"><br>
+    <input type="button" onclick="displayMonth()" value="Нажать для вывода текущего месяца"><br>
+    <input type="button" onclick="displayYear()" value="Нажать для вывода текущего года">
+   
+    <script>
+        let date = new Date();
+        function displayDay() {
+            let days = ["воскресенье", "понедельник", "вторник", "среда", "четверг", "пятница", "суббота"];
+            alert(days[date.getDay()]);
+        }
+
+        function displayMonth() {
+            let months = ["янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сент", "окт", "ноя", "дек"];
+            alert(months[date.getMonth()]);
+        }
+
+        function displayYear() {
+            alert(date.getFullYear());
+        }
+
+    </script>
+</body>
+</html>

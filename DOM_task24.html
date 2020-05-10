@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задачи по работе с DOM</title>
+</head>
+<body>
+    <style>
+    </style>
+    <span style="border: 1px solid black">6.  Для всех инпутов сделайте так, чтобы они выводили свой value алертом при нажатии на любой из них, но только по первому нажатию. Повторное нажатие на инпут не должно вызывать реакции.</span>
+    <br>
+    <input type="text" value="!">
+    <input type="text" value="?">
+    <input type="text" value="$">
+    <script>
+    let inputs = document.querySelectorAll('input');
+
+    for(let i = 0; i < inputs.length; i++) {
+        inputs[i].addEventListener('click', alertValue);
+    }
+    
+    function alertValue() {
+        alert(this.value);
+        this.removeEventListener('click', alertValue);
+    }
+    </script>
+</body>
+</html>
