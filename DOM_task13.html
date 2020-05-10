@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Работа с DOM</title>
+</head>
+<body>
+    <p>При нажатии на кнопку должны появиться адресы ссылок.</p>
+    <a href="google.com">ссылка 1</a><br>
+    <a href="ya.ru">ссылка 2</a><br>
+    <a href="mail.ru">ссылка 3</a><br>
+    <input type="button" onclick="func()" value="Кнопка">
+
+    <script>
+        function func() {
+            let elems = document.querySelectorAll('a');
+            for(let elem of elems){
+                elem.innerHTML += ' ' + elem.getAttribute('href');
+            }
+            
+        }
+    </script>
+</body>
+</html>
