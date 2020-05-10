@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Продвинутые задачи по взаимодействию с DOM</title>
+</head>
+<body>
+    <span>Дан ol. Вставьте ему в конец li с текстом 'пункт'.<br>
+    Дан ul. Дан массив. Вставьте элементы этого массива в конец ul так, чтобы каждый элемент стоял в своем li.   </span>    
+
+    <ol id="parent">
+        <li>Первый в списке</li>
+        <li>Второй в списке</li>
+    </ol>
+    <ul> 
+
+    </ul>
+    <script>
+        let parentOL = document.querySelector("#parent");
+        let li = document.createElement("li");
+        li.innerHTML = "пункт";
+        parentOL.appendChild(li);
+
+        let parentUL = document.querySelector('ul');
+        let arr = ["яблоко", "груша", "абрикос", "кот", 5п]
+        
+        for(let i = 0; i < arr.length; i++) {
+            let list = document.createElement("li");
+            list.innerHTML = arr[i];
+            parentUL.appendChild(list);
+        }
+    </script>
+    
+</body>
+</html>
