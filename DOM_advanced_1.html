@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Продвинутые задачи по взаимодействию с DOM</title>
+</head>
+<body>
+    <style>
+        .www {
+            color:red;
+        }
+    </style>
+    <ul style="list-style-type: none; margin-bottom: 30px">
+        <li>1.Дан элемент #elem1. Добавьте ему класс www.</li>
+        <li>2. Дан элемент #elem2. Удалите у него класс www.</li>
+        <li>3. Дан элемент #elem3. Проверьте наличие у него класса www.</li>
+        <li>4.Дан элемент #elem4. Добавьте ему класс www, если его нет и удалите - если есть.</li>
+        <li> 5.Дан элемент #elem5. Узнайте количество его классов.</li>
+        <li>6.Дан элемент #elem5. Выведите последовательно его классы.</li>
+    </ul>
+
+    <p id="elem1">Подопытный кролик для экспериментов</p> 
+    <p id="elem2">Подопытный кролик для экспериментов</p>
+    <p id="elem3">Подопытный кролик для экспериментов</p>
+    <p id="elem4">Подопытный кролик для экспериментов</p>
+    <p id="elem5" class="www sss ccc">Подопытный кролик для экспериментов</p>
+
+    <script>
+        //1
+        let elem1 = document.querySelector('#elem1');
+        elem1.classList.add('www');
+        //2
+        let elem2 = document.querySelector('#elem2');
+        elem2.classList.remove('www');
+        //3
+        let elem3 = document.querySelector('#elem3');
+        console.log(elem3.classList.contains('www'));
+        //4
+        let elem4 = document.querySelector('#elem4');
+        function containsClass(){
+            if(elem4.classList.contains('www')) elem.classList.remove('www');
+                else elem.classList.add('www');
+        }
+        //5
+        let elem5 = document.querySelector('#elem5');
+        let classNames = elem5.classList;
+        let count = 0;
+        for(let className of classNames){
+            count++;
+        }
+        console.log("количество классов равно: " + count);
+        //6
+        for(let className of classNames){
+            console.log(className);
+        }
+
+
+    </script>
+    
+</body>
+</html>
