@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Работа с DOM</title>
+</head>
+<body>
+    <p>При нажатии на кнопку, текст в абзаце поменяется.sdfsdfsdfsdf</p>
+    <input type="button" id="btn" value="Кнопка">
+
+    <script>
+        let btn= document.querySelector('#btn');
+        btn.onclick = () => {
+            let elem = document.querySelector('p');
+            elem.innerHTML = 'Новый текст в новом цвете!';
+            elem.style.color = 'red';
+
+        }    
+
+    </script>
+</body>
+</html>
