@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Продвинутые задачи по взаимодействию с DOM</title>
+</head>
+<body>
+    <span>Дан ul. Дан массив. Вставьте элементы этого массива в конец ul так, чтобы каждый элемент стоял в своем li. Сделайте так, чтобы к вставляемым li было привязано следующее событие: по нажатию на li она должна вывести на экран свой текст.   </span>    
+
+    <ul id="parent">
+
+    </ul>
+
+    </ul>
+    <script>
+        let parent = document.querySelector("#parent");
+        let arr = ["один", "два", "три", "четыре"];
+        for(let i = 0 ; i < arr.length; i++) {
+            let li = document.createElement('li');
+            li.innerHTML = arr[i];
+            li.addEventListener('click', function displayLI () {
+                alert(this.innerHTML)
+            });
+            parent.appendChild(li);
+        }
+        
+    </script>
+    
+</body>
+</html>
