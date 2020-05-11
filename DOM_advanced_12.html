@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Продвинутые задачи по взаимодействию с DOM</title>
+</head>
+<body>
+    <p>
+        Дан инпут. Дана кнопка. По нажатию на кнопку клонируйте этот инпут.
+    </p>
+
+    <input type="text" id="inp" placeholder="Введите имя">
+    <button id="btn">Ок</button>
+    
+    <script>
+        let button = document.querySelector("#btn");
+        button.onclick = () => {
+            let parent = document.querySelector('body')
+            let input = document.querySelector("#inp");
+            let clone = input.cloneNode(true);
+            parent.appendChild(clone);
+        }
+    </script>
+    
+</body>
+</html>
