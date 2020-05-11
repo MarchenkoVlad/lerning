@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Продвинутые задачи по взаимодействию с DOM</title>
+</head>
+<body>
+    <span>Дан элемент #elem. Вставьте перед ним span с текстом '!!!'.<br>
+
+        Дан элемент #elem. Вставьте после него span с текстом '%%%'. <br>
+       
+        Дан элемент #elem. Вставьте ему в начало span с текстом '???'. <br>
+       
+        Дан элемент #elem. Вставьте ему в конец span с текстом '+++'.</span>    
+
+    <div id="elem"> 
+        <p>абзац</p>
+    </div>    
+
+    <script>
+        let target = document.querySelector("#elem");
+        //1
+        target.insertAdjacentHTML('beforeBegin', '<span>!!!</span>');
+        //2
+        target.insertAdjacentHTML('afterEnd', '<span>%%%</span>');
+        //3
+        target.insertAdjacentHTML('afterBegin', '<span>???</span>');
+        //4
+        target.insertAdjacentHTML('beforeEnd', '<span>+++</span>');
+
+    </script>
+    
+</body>
+</html>
