@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Продвинутые задачи по взаимодействию с DOM</title>
+</head>
+<body>
+    <p>
+        Дан элемент #parent, внутри него дан элемент #child. Дана кнопка. По нажатию на эту кнопку удалите элемент #child.<br>
+        Дан ol. По нажатию на кнопку получите его последнего потомка и удалите его.<br> 
+        Дан ol, а внутри него li. Сделайте так, чтобы по нажатию на любую li эта li удалялась.
+    </p>
+
+    <div id="parent">
+        <p id="child">Дочерний элемент</p>
+        <button id="btn" onclick="removeP()">Нажать для удаления child</button>
+    </div>
+
+    <ol>
+        <li>первый</li>
+        <li>второй</li>
+        <li>третий</li>
+    </ol>
+
+    <button id="btn2" onclick="removeL()">Удалить потомок списка</button>
+
+    <ol id="order">
+        <li>Один</li>
+        <li>Два</li>
+        <li>Три</li>
+    </ol>
+    
+    <script>
+        //1
+        function removeP() {
+            let parent = document.querySelector("#parent");
+            let child = document.querySelector("#child");
+            parent.removeChild(child);
+        }
+        //2
+        function removeL() {
+            let parent = document.querySelectorAll('ol')[0];
+            let child = parent.lastElementChild;
+            console.log(child.innerHTML);
+            parent.removeChild(child);
+        }
+        //3
+        let orderedList = document.querySelector("#order");
+        let childrenOrderedList = orderedList.children;
+        for(let i = 0; i < childrenOrderedList.length; i++) {
+            childrenOrderedList[i].addEventListener('click', function removeCOL(){
+                orderedList.removeChild(this);
+            });
+        }
+
+        
+        
+    </script>
+    
+</body>
+</html>
