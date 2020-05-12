@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Продвинутые задачи по взаимодействию с DOM</title>
+</head>
+<body>
+    <p>
+        Дан инпут. Рядом с ним находится кнопочка "+". 
+        По нажатию на эту кнопку под нашим инпутом должен появится еще один пустой инпут.
+        <br>
+        <input type="button"  id="btn" onclick="cloneInp()" value="+">
+        <input type="text" style="display: block" id="inp"> 
+
+    <script>
+        function cloneInp() {
+            let btn = document.querySelector("#btn");
+            let input = document.querySelector("#inp");
+            let clone = input.cloneNode(true);
+            btn.insertAdjacentElement('afterEnd', clone);
+        }
+    </script>
+    
+</body>
+</html>
