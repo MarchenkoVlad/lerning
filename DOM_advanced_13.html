@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Продвинутые задачи по взаимодействию с DOM</title>
+</head>
+<body>
+    <p>
+        Дан массив. Создайте ul через createElement, затем вставьте каждый элемент 
+        этого массива в отдельную li внутри этой ul, затем вставьте эту ul в конец body.
+    </p>
+
+    
+    <script>
+        let arr = ["первый", "второй", "третий", "четвертый"];
+        let ul = document.createElement('ul');
+        let body = document.querySelector('body');
+        let list = ul.children;
+        for(let i = 0; i < arr.length; i++) {
+            let li = document.createElement('li');
+            li.innerHTML = arr[i]
+            ul.appendChild(li);
+        }
+        
+        body.appendChild(ul);
+    </script>
+    
+</body>
+</html>
