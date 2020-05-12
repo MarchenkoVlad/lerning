@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задачи по работе с метриками</title>
+</head>
+<body>
+    <style>
+        #elem {
+            width: 200px;
+            height: 200px;
+            padding: 30px;
+            border: 20px solid #bcbcbc;
+            overflow: auto;
+        }
+    </style>
+    <p>
+        Дан элемент #elem с вертикальной полосой прокрутки. По нажатию на кнопку выведите на сколько элемент прокручен сверху. Показать решение.
+        <br>
+        Дан элемент #elem с вертикальной полосой прокрутки. По нажатию на кнопку прокрутите его до позиции 100px сверху. Показать решение.
+        <br>
+         Дан элемент #elem с вертикальной полосой прокрутки. По нажатию на кнопку прокрутите его на 100px вниз от текущего положения. Показать решение.
+    </p>
+    
+    <div id="elem">
+        Lorem ipsum dolorsit amet consectetur adipiscing elit. Sed viverra mollis lorem, fringilla dapibus nisi commodo interdum. Vivamus in turpis quis purus dapibus aliquam id nec velit. In at aliquet sem, a rutrum neque. Vestibulum posuere lobortis accumsan. Etiam non tincidunt erat, vel condimentum turpis. Maecenas magna velit, hendrerit non commodo id, sagittis ut nisi. Etiam ex sapien, iaculis nec eros non, venenatis porttitor eros. Phasellus imperdiet interdum congue. Nam tempor justo id vestibulum imperdiet. Donec mauris ipsum, accumsan non ultrices vitae, egestas nec lorem. Suspendisse convallis, diam sed fermentum rutrum, mauris libero tristique ante, vitae pharetra eros urna non velit. Phasellus tortor purus, vehicula et ex in, sagittis rhoncus sapien.
+    </div>
+
+    <input type="button" id="btn"  value="Насколько прокурчен сверху">
+    <input type="button" id="btn2" value="Прокрутить до 100px сверху">
+    <input type="button" id="btn3" value="Прокрутить вниз на 100px">
+
+    <script>
+        let elem = document.querySelector("#elem");
+        let btn = document.querySelector("#btn");
+        let btn2 = document.querySelector("#btn2");
+        let btn3 = document.querySelector("#btn3");
+
+        btn.onclick = () => {
+            alert("Прокручен на: " + elem.scrollTop);
+        }
+
+        btn2.onclick = () => {
+            elem.scrollTop = 100;
+        }
+
+        btn3.onclick = () => {
+            elem.scrollTop += 100;
+        }
+    </script>
+    
+</body>
+</html>
