@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задачи по работе с метриками</title>
+</head>
+<body>
+    <style>
+        #elem {
+            width: 200px;
+            height: 200px;
+            padding: 30px;
+            border: 20px solid #bcbcbc;
+            overflow: auto;
+        }
+    </style>
+    <p>
+        Дан элемент #elem с границами. По нажатию на кнопку выведите толщину его верхней границы. Показать решение.<br>
+        Дан элемент #elem с границами. По нажатию на кнопку выведите толщину его левой границы.
+    </p>
+    
+    <div id="elem">
+        Lorem ipsum dolorsit amet consectetur adipiscing elit. Sed viverra mollis lorem, fringilla dapibus nisi commodo interdum. Vivamus in turpis quis purus dapibus aliquam id nec velit. In at aliquet sem, a rutrum neque. Vestibulum posuere lobortis accumsan. Etiam non tincidunt erat, vel condimentum turpis. Maecenas magna velit, hendrerit non commodo id, sagittis ut nisi. Etiam ex sapien, iaculis nec eros non, venenatis porttitor eros. Phasellus imperdiet interdum congue. Nam tempor justo id vestibulum imperdiet. Donec mauris ipsum, accumsan non ultrices vitae, egestas nec lorem. Suspendisse convallis, diam sed fermentum rutrum, mauris libero tristique ante, vitae pharetra eros urna non velit. Phasellus tortor purus, vehicula et ex in, sagittis rhoncus sapien.
+    </div>
+    <input type="button" id="btn" onclick="displayBorderTop()" value="Толщина верхней границы">
+    <input type="button" id="btn2" onclick ="displayBorderLeft()" value="Толщина нижней границы">
+
+    <script>
+        let elem = document.querySelector("#elem");
+        let btn = document.querySelector("#btn");
+        let btn2 = document.querySelector("#btn2");
+
+        btn.onclick = () => {
+            alert(elem.clientTop);
+        };
+
+        btn2.onclick = () => {
+            alert(elem.clientLeft);
+        };
+        
+    </script>
+    
+</body>
+</html>
