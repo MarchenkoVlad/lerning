@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Продвинутые задачи по взаимодействию с DOM</title>
+</head>
+<body>
+    <p>
+        Дан инпут. В него вводится число. По потери фокуса сделайте так, чтобы каждая цифра вставилась в новый инпут. 
+        Инпутов для цифр изначально не существует, они должны создаться в процессе работы скрипта.</p>
+        <br>
+        <input type="text" id="inp" placeholder="Введите число">
+        
+    <script>
+        let input = document.querySelector("#inp");
+        input.addEventListener('blur', addInp);
+
+        function addInp() {
+            let numbers= input.value;
+            for(let i = numbers.length-1; i >= 0; i--) {
+                let clone = input.cloneNode(false);
+                clone.value = numbers[i];
+                input.insertAdjacentElement('afterEnd', clone);
+            }
+        }
+    </script>
+    
+</body>
+</html>
