@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задачи по работе с метриками</title>
+</head>
+<body>
+    <style>
+        #elem {
+            width: 500px;
+            height: 400px;
+            border: 2px solid black;
+        }
+    </style>
+    <div id="elem"></div>
+
+    <script>
+        let elem = document.querySelector("#elem");
+        elem.onmousemove = func;
+
+        function func(event) {
+            elem.innerHTML = "X:" + event.clientX + "Y:" + event.clientY;
+        }
+        
+    </script>
+    
+</body>
+</html>
