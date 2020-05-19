@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Модальное окно. Попытка №1</title>
+</head>
+<body>
+    <style>
+        .wrapper {
+            display: none;
+            position: fixed; /* фиксированное положение */
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0,0,0,0.2); /* цвет фона */
+        }
+
+        .modal {
+            border: 2px solid black;
+            width: 400px;
+            height: auto;
+            margin: 30px auto;
+            background-color:white;
+        }
+        
+        .modal-header {
+            display: flex;
+            align-items: flex-start;
+            border-bottom: 1px solid black;
+            background-color: greenyellow;
+        }
+
+        .modal-title {
+            margin: 0 auto;
+        }
+
+        .modal-body {
+        background-color: white;
+        }
+
+        .modal-footer {
+            display: flex;
+            justify-content: space-between;
+            background-color: greenyellow;
+            padding-top: 5px;
+        }
+        #ok {
+            margin-left: 5px;
+            margin-bottom: 5px;
+        }
+
+        #cancel {
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+    </style>
+    <span>Нажмите кнопку, чтобы появилось модальное окно</span>
+    <button id="btn">Вызвать модальное окно</button>
+    <div class="wrapper">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title">Заголовок окна</h3>
+                <button id="close">x</button>
+            </div>
+            <div class="modal-body">
+                <p>Содержимое модального окна</p>
+            </div>
+            <div class="modal-footer">
+                <button id="ok">Ок</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let button = document.querySelector('#btn');
+        button.addEventListener('click', callModal);
+
+        let ok = document.querySelector('#ok');
+        let close = document.querySelector('#close');
+        close.addEventListener('click', closeModal);
+        ok.addEventListener('click', closeModal);
+
+        function closeModal() {
+            console.log('sdf');
+            let modal = document.querySelector('.wrapper');
+            modal.style.display = 'none';
+        }
+
+        function callModal() {
+            let modal = document.querySelector('.wrapper');
+            modal.style.display = 'block';
+        }
+
+    </script>
+</body>
+</html>
