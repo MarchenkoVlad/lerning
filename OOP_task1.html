@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практика ООП</title>
+</head>
+<body>
+    <p>1.Реализуйте класс Worker (Работник), который будет иметь следующие свойства: 
+        name (имя), surname (фамилия), rate (ставка за день работы), days 
+        (количество отработанных дней). Также класс должен иметь метод getSalary(), 
+        который будет выводить зарплату работника. Зарплата - это произведение (умножение)
+        ставки rate на количество отработанных дней days.</p>
+
+    <script>
+        class Worker {
+            getSalary() {
+                return console.log(this.rate * this.days);
+            }
+        }
+        
+        let worker = new Worker();
+        worker.name = "Ivan";
+        worker.surname = "Ivanov";
+        worker.rate = "20";
+        worker.days = "20";
+
+        let workerSecond = new Worker();
+        workerSecond.name = "Petr";
+        workerSecond.surname = "Petrov";
+        workerSecond.rate = "15";
+        workerSecond.days = "20";
+    </script>
+</body>
+</html>
