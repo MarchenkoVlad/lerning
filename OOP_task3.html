@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практика ООП</title>
+</head>
+<body>
+    <p> Модифицируйте класс Worker из предыдущей задачи следующим образом: для свойства rate и для 
+        свойства days сделайте еще и методы-сеттеры. </p>
+
+    <script>
+        class Worker {
+            constructor (name, surname, rate, days) {
+                this._name = name;
+                this._surname = surname;
+                this._rate = rate;
+                this._days = days;
+            }
+
+            getName() {
+                return this._name;
+            }
+
+            getSurname() {
+                return this._surname;
+            }
+
+            getRate() {
+                return this._rate;
+            }
+
+            getDays() {
+                return this._days;
+            }
+            
+            setRate(rate) {
+                this._rate = rate;
+            }
+
+            setDays(days) {
+                this._days = days;
+            }
+
+            getSalary() {
+                return console.log(this._rate * this._days);
+            }
+        }
+        
+        let worker = new Worker("Ivan","Ivanov","20","20");
+        let workerSecond = new Worker("Petr","Petrov","15","20");   
+    </script>
+</body>
+</html>
